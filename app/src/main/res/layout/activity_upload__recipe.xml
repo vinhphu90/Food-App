@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Upload_Recipe">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/foodImage"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:hint="Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtPrice"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:hint="Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:onClick="btnSelectImage"
+            android:textColor="#ffffff"
+            android:backgroundTint="#23E83D"
+            android:textSize="25dp"
+            android:text="Select Image"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <Button
+            android:textColor="#ffffff"
+            android:backgroundTint="#23E83D"
+            android:textSize="25dp"
+            android:text="Upload Recipe"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
