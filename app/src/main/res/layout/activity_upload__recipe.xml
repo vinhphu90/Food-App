@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/ic_launcher_foreground"
             android:id="@+id/foodImage"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
@@ -39,20 +39,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
+            android:layout_marginTop="80dp"
             android:onClick="btnSelectImage"
             android:textColor="#ffffff"
-            android:backgroundTint="#23E83D"
+            android:background="@drawable/button_selectimage"
             android:textSize="25dp"
             android:text="Select Image"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="50dp"/>
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_uploadrecipe"
+            android:onClick="btnUploadRecipe"
             android:textColor="#ffffff"
-            android:backgroundTint="#23E83D"
             android:textSize="25dp"
             android:text="Upload Recipe"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="50dp"/>
 
     </LinearLayout>
 
