@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<FoodData> myFoodList;
     FoodData mFoodData;
-
+    EditText txtSearch;
+    MyAdapter myAdapter;
     private DatabaseReference databaseReference;
     private ValueEventListener eventListener;
     ProgressDialog progressDialog;
@@ -39,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this,1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
+        txtSearch = (EditText)findViewById(R.id.txtSearchtext);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading Items....");
 
         myFoodList = new ArrayList<>();
 
-        final MyAdapter myAdapter = new MyAdapter(MainActivity.this,myFoodList);
+        myAdapter = new MyAdapter(MainActivity.this,myFoodList);
         mRecyclerView.setAdapter(myAdapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
@@ -73,6 +79,35 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+
+            }
+        });
+
+    }
+
+    private void filter(String text) {
+        ArrayList<FoodData> filterlist = new ArrayList<>();
+        for (FoodData item: myFoodList){
+            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
+                filterlist.add(item);
+            }
+        }
+        myAdapter.filteredList(filterlist);
 
     }
 
