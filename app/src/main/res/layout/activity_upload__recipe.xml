@@ -53,7 +53,7 @@
             android:onClick="btnUploadRecipe"
             android:textColor="#ffffff"
             android:textSize="25dp"
-            android:text="Upload Recipe"
+            android:text="Upload Food"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
 

@@ -30,7 +30,7 @@ import java.util.Calendar;
 
 public class Upload_Recipe extends AppCompatActivity {
     
-    ImageView recipeImage;
+    ImageView FoodImage;
     Uri uri;
     EditText txtname,txtdescription,txtprice;
     String imageUrl;
@@ -45,7 +45,7 @@ public class Upload_Recipe extends AppCompatActivity {
 //        DatabaseReference myRef = database.getReference("message");
 
       //  myRef.setValue("Hello, World!");
-        recipeImage = (ImageView)findViewById(R.id.foodImage);
+        FoodImage = (ImageView)findViewById(R.id.foodImage);
         txtname = (EditText)findViewById(R.id.edtName);
         txtdescription = (EditText)findViewById(R.id.edtDescription);
         txtprice = (EditText)findViewById(R.id.edtPrice);
@@ -63,15 +63,14 @@ public class Upload_Recipe extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         
         if(resultCode == RESULT_OK) {
-            uri = data.getData();
-            recipeImage.setImageURI(uri);
+            uri = data.getData();FoodImage.setImageURI(uri);
         }else
             Toast.makeText(this, "Bạn chưa chọn hình ảnh", Toast.LENGTH_SHORT).show();
     }
 
     public void uploadImage () {
         StorageReference storageReference = FirebaseStorage.getInstance()
-                .getReference().child("RecipeImage")
+                .getReference().child("FoodImage")
                 .child(uri.getLastPathSegment());
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -114,7 +113,7 @@ public class Upload_Recipe extends AppCompatActivity {
         String myCurrentDateTime = DateFormat.getDateTimeInstance()
                 .format(Calendar.getInstance().getTime());
 
-        FirebaseDatabase.getInstance().getReference("Recipe")
+        FirebaseDatabase.getInstance().getReference("Food")
                 .child(myCurrentDateTime).setValue(foodData).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

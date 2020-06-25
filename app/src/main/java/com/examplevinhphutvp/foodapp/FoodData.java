@@ -6,6 +6,7 @@ public class FoodData {
     private String Description;
     private String price;
     private String Image;
+    private String key;
 
     public FoodData(String name, String description, String price, String image) {
         Name = name;
@@ -47,5 +48,13 @@ public class FoodData {
 
     public void setImage(String image) {
         Image = image;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

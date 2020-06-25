@@ -21,5 +21,19 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+        <Button
+            android:onClick="btnDeleteFood"
+            android:layout_margin="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textSize="20dp"
+            android:text="Delete"
+            android:background="@drawable/button_selectimage"
+            android:layout_width="140dp"
+            android:layout_height="80dp"/>
+    </RelativeLayout>
 
 </LinearLayout>

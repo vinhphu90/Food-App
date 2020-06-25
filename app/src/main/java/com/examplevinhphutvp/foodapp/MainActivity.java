@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(MainActivity.this,myFoodList);
         mRecyclerView.setAdapter(myAdapter);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Food");
         progressDialog.show();
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
 
                     FoodData foodData = itemSnapshot.getValue(FoodData.class);
+                    foodData.setKey(itemSnapshot.getKey());
 
                     myFoodList.add(foodData);
                 }
