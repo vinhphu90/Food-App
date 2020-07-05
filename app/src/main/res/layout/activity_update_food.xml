@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateFoodActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_launcher_foreground"
+            android:id="@+id/foodImage"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:hint="Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtPrice"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:hint="Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Address"
+            android:textSize="20sp" />
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Phone"
+            android:textSize="20sp" />
+        <Button
+            android:onClick="btn_camera"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_uploadrecipe"
+            android:drawableLeft="@android:drawable/ic_menu_camera"
+            android:text="Camera"
+            android:id="@+id/buttonCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:onClick="btnSelectImage"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_uploadrecipe"
+            android:textSize="25dp"
+            android:text="Select Image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_uploadrecipe"
+            android:onClick="btnUpdateFood"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:text="Update Food"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

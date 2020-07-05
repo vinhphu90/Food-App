@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <ImageView
+        android:id="@+id/loginicon"
+        android:paddingTop="50dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/icon_logins"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"/>
+    <EditText
+        android:layout_marginTop="500dp"
+        android:hint="Nhap tai khoan"
+        android:id="@+id/edittextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50sp" />
+
+    <EditText
+        android:inputType="textPassword"
+        android:layout_below="@id/edittextEmail"
+        android:hint="Nhap mat khau"
+        android:id="@+id/edittextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50sp" />
+    <Button
+        android:textColor="#ffffff"
+        android:background="@drawable/button_selectimage"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/edittextPassword"
+        android:text="Dang ky"
+        android:id="@+id/buttonDangky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_selectimage"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/edittextPassword"
+        android:text="Dang nhap"
+        android:id="@+id/buttonDangnhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

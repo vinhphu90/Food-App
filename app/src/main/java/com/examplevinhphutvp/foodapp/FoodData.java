@@ -6,13 +6,18 @@ public class FoodData {
     private String Description;
     private String price;
     private String Image;
+    private String Address;
+    private String Phone;
     private String key;
 
-    public FoodData(String name, String description, String price, String image) {
+    public FoodData(String name, String description, String price, String image, String address, String phone) {
         Name = name;
         Description = description;
         this.price = price;
         Image = image;
+        Address = address;
+        Phone = phone;
+
     }
 
     public FoodData() {
@@ -48,6 +53,22 @@ public class FoodData {
 
     public void setImage(String image) {
         Image = image;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 
     public String getKey() {

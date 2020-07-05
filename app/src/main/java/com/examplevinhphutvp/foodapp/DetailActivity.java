@@ -17,7 +17,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class DetailActivity extends AppCompatActivity {
-    TextView foodDescription;
+    TextView foodDescription,foodName,foodPrice,foodAddress,foodPhone;
     ImageView foodImage;
     String key ="";
     String imageUrl = "";
@@ -26,9 +26,12 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+        foodName = (TextView)findViewById(R.id.txtfoodname2);
+        foodPrice = (TextView)findViewById(R.id.txtPrice2) ;
         foodDescription = (TextView)findViewById(R.id.txtDescription2);
         foodImage =  (ImageView) findViewById(R.id.ImgView2);
+        foodAddress = (TextView)findViewById(R.id.txtAddress2);
+        foodPhone = (TextView)findViewById(R.id.txtPhone2);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -36,6 +39,10 @@ public class DetailActivity extends AppCompatActivity {
             foodDescription.setText(bundle.getString("Description"));
             key = bundle .getString("KeyValue");
             imageUrl = bundle.getString("Image");
+            foodName.setText(bundle.getString("foodName"));
+            foodPrice.setText(bundle.getString("price"));
+            foodAddress.setText(bundle.getString("Address"));
+            foodPhone.setText(bundle.getString("Phone"));
             //foodImage.setImageResource(bundle.getInt("Image"));
 
             Glide.with(this)
@@ -59,5 +66,17 @@ public class DetailActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void btnUpdateFood(View view) {
+
+        startActivity(new Intent(getApplicationContext(), UpdateFoodActivity.class)
+                .putExtra("foodNameKey",foodName.getText().toString())
+                .putExtra("descriptionKey",foodDescription.getText().toString())
+                .putExtra("priceKey",foodPrice.getText().toString())
+                .putExtra("addressKey",foodAddress.getText().toString())
+                .putExtra("phoneKey",foodPhone.getText().toString())
+                .putExtra("oldimageUrl",imageUrl)
+                .putExtra("key",key));
     }
 }
