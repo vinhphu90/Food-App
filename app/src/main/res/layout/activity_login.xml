@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".LoginActivity">
-    <ImageView
-        android:id="@+id/loginicon"
-        android:paddingTop="50dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/icon_logins"
+
+    <LinearLayout
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="350dp"/>
-    <EditText
-        android:layout_marginTop="500dp"
-        android:hint="Nhap tai khoan"
-        android:id="@+id/edittextEmail"
+        android:layout_height="wrap_content"
+        android:layout_weight="8">
+
+        <ImageView
+            android:id="@+id/loginicon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_logins" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <EditText
-        android:inputType="textPassword"
-        android:layout_below="@id/edittextEmail"
-        android:hint="Nhap mat khau"
-        android:id="@+id/edittextPassword"
+        <EditText
+            android:id="@+id/edittextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginTop="150dp"
+            android:hint="Nhap tai khoan" />
+
+        <EditText
+            android:id="@+id/edittextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:hint="Nhap mat khau"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp" />
-    <Button
-        android:textColor="#ffffff"
-        android:background="@drawable/button_selectimage"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/edittextPassword"
-        android:text="Dang ky"
-        android:id="@+id/buttonDangky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:padding="5dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/button_selectimage"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        android:layout_below="@id/edittextPassword"
-        android:text="Dang nhap"
-        android:id="@+id/buttonDangnhap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/buttonDangnhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_selectimage"
+            android:text="Dang nhap"
+            android:textColor="#ffffff" />
 
+        <Button
+            android:id="@+id/buttonDangky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_selectimage"
+            android:text="Dang ky"
+            android:textColor="#ffffff" />
 
+    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

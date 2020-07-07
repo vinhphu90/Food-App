@@ -33,7 +33,7 @@ public class AddNewRecipe extends AppCompatActivity {
     Uri uri;
     EditText txtname,txtdescription,txtprice,txtaddress,txtphone;
     String imageUrl;
- //   int REQUEST_CODE_CAMERA = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,39 +67,6 @@ public class AddNewRecipe extends AppCompatActivity {
             Toast.makeText(this, "Bạn chưa chọn hình ảnh", Toast.LENGTH_SHORT).show();
     }
 
-
-
-//    public void btn_camera(View view) {
-//        ActivityCompat.requestPermissions(
-//                Upload_Recipe.this,
-//                new String[]{Manifest.permission.CAMERA},
-//                REQUEST_CODE_CAMERA
-//        );
-//    }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        if (requestCode == REQUEST_CODE_CAMERA) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(intent, REQUEST_CODE_CAMERA);
-//            }
-//        }
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-
-
-//        @Override
-//       protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
-//            if (requestCode == REQUEST_CODE_CAMERA && resultCode == RESULT_OK && data != null) {
-//                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-//                FoodImage.setImageBitmap(bitmap);
-//            }
-//          super.onActivityResult(requestCode, resultCode, data);
-//        }
-
-
-  //  }
 
     public void uploadImage () {
         if(uri != null) {

@@ -7,7 +7,8 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:layout_margin="15dp"
+        android:background="@drawable/button_selectimage"
+        android:layout_margin="20dp"
         android:id="@+id/txtSearchtext"
         android:textSize="23dp"
         android:hint="Search"
@@ -31,16 +32,7 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-<!--    <Button-->
-<!--        android:padding="10dp"-->
-<!--        android:onClick="btn_loginActivity"-->
-<!--        android:background="@drawable/button_uploadrecipe"-->
-<!--        android:layout_margin="40dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:textColor="#ffffff"-->
-<!--        android:text="Login food"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"/>-->
+
 
 
 

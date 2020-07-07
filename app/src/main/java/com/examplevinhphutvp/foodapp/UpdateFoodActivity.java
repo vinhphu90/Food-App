@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,8 +27,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
-
 public class UpdateFoodActivity extends AppCompatActivity {
 
     ImageView FoodImage;
@@ -40,7 +37,6 @@ public class UpdateFoodActivity extends AppCompatActivity {
     String foodname,foodDescription,foodPrice,foodAddress,foodPhone;
     DatabaseReference databaseReference;
     StorageReference storageReference;
-   private int REQUEST_CODE_CAMERA = 13;
     private String IDuser;
 
     @Override
@@ -159,21 +155,21 @@ public class UpdateFoodActivity extends AppCompatActivity {
         });
     }
 
-    public void btn_camera(View view) {
-        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, 2);
-    }
+//    public void btn_camera(View view) {
+//        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//        startActivityForResult(cameraIntent, 2);
+//    }
+//
+//@Override
+//public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//    if (requestCode == REQUEST_CODE_CAMERA) {
+//        if (grantResults[0] == PERMISSION_GRANTED) {
+//            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//            startActivityForResult(intent, REQUEST_CODE_CAMERA);
+//        }
+//    }
+//    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-@Override
-public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-    if (requestCode == REQUEST_CODE_CAMERA) {
-        if (grantResults[0] == PERMISSION_GRANTED) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent, REQUEST_CODE_CAMERA);
-        }
-    }
-    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-}
+//}
 
 }

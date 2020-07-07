@@ -26,6 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="2sp"
             android:id="@+id/edtDescription"
             android:layout_marginTop="10dp"
             android:textSize="20sp"
@@ -40,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
+
             android:id="@+id/edtAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,20 +60,9 @@
             android:layout_marginTop="10dp"
             android:hint="Phone"
             android:textSize="20sp" />
+
         <Button
-            android:onClick="btn_camera"
-            android:padding="5dp"
-            android:layout_gravity="center"
-            android:textColor="#ffffff"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_uploadrecipe"
-            android:drawableLeft="@android:drawable/ic_menu_camera"
-            android:text="Camera"
-            android:id="@+id/buttonCamera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:onClick="btnSelectImage"
             android:textColor="#ffffff"
             android:background="@drawable/button_uploadrecipe"
